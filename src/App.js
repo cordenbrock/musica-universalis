@@ -1,10 +1,11 @@
-import './App.css';
 import Sandbox from './sandbox/sandbox'
 
 function App() {
   return (
     <>
-      <Sandbox />
+      <div>
+        <Sandbox />
+      </div>
     </>
   );
 }
