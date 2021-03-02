@@ -28,25 +28,26 @@ function PlaySynth() {
     const randomNote = note
     console.log(randomNote);
     synth.triggerAttack(randomNote, now);
-    synth.triggerAttack(randomNote, now + 2);
-    synth.triggerRelease([randomNote, randomNote], now + 2.5);
+    synth.triggerRelease([randomNote], now + 4);
   }
 
 
 
   const starBtnStyle = {
     position: "absolute",
-    bottom: stars.yCoordinate,
-    right: stars.xCoordinate
+    borderRadius: 13,
+    boxShadow: '0px 0px 15px #9E9E9E'
   }
 
   return (
     <>
-      <div>
+      
         {stars.map((star,i=0) => 
-          <button style={{position: "absolute", bottom: star.yCoordinate, right: star.xCoordinate}} onClick={() => playNote(star.randomMusicNote)} key={i++}>Boogie!</button>
+          <button 
+            style={{...starBtnStyle, bottom: star.yCoordinate, right: star.xCoordinate}}
+            onClick={() => playNote(star.randomMusicNote)} key={i++}>o</button>
         )}
-      </div>
+      
     </>
   );
 }
