@@ -1,10 +1,11 @@
-import Sandbox from './sandbox/sandbox'
+import PlaySynth from './sandbox/PlaySynth'
 
 function App() {
   return (
     <>
       <div>
-        <Sandbox />
+        <PlaySynth />
+        {/* <canvas id={'canvas'}></canvas> */}
       </div>
     </>
   );

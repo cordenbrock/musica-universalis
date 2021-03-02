@@ -3,9 +3,7 @@ import * as Tone from 'tone'
 
 function playSynth() {
   
-  const notes = ['C4', 'C4', 'G4', 'G4', 'A4', 'A4', 'G4', 'F4', 'F4', 'E4', 'E4', 'D4', 'D4', 'C4',
-  'G4', 'G4', 'F4', 'F4', 'E4', 'E4', 'D4', 'G4', 'G4', 'F4', 'F4', 'E4', 'E4', 'D4', 'C4', 'C4', 'G4', 'G4', 'A4', 'A4',
-  'G4', 'F4', 'F4', 'E4', 'E4', 'D4', 'D4', 'C4'];
+  const notes = ['E2', 'B2', 'G#2', 'A#2', 'E3', 'B3', 'G#3', 'A#3', 'E4', 'B4', 'G#4', 'A#4' ];
 
 
   function createRandomStarNoteElements() {
@@ -53,4 +51,4 @@ function playSynth() {
   );
 }
 
-export default playSynth;
+export default StarNote;
