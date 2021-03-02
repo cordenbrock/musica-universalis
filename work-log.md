@@ -10,4 +10,4 @@
 
 3/1 (9:00pm) -- Successfully place a button element at a random window position
 
-3/1 (9:00pm) -- Successfully facilitate array of notes to be mapped out as button elements, all at random window positions
+3/1 (11:30pm) -- Successfully facilitate array of notes to be mapped out as playable button elements, all at random window positions
