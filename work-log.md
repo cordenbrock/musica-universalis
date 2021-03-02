@@ -8,4 +8,6 @@
 - https://medium.com/@pdx.lucasm/canvas-with-react-js-32e133c05258
 - https://www.youtube.com/watch?v=gm1QtePAYTM 
 
-3/1 (9:00pm) -- Successfully facilitate a button element at a random window position
+3/1 (9:00pm) -- Successfully place a button element at a random window position
+
+3/1 (9:00pm) -- Successfully facilitate array of notes to be mapped out as button elements, all at random window positions

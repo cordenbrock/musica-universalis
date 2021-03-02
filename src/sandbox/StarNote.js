@@ -3,7 +3,7 @@ import * as Tone from 'tone'
 
 function playSynth() {
   
-  const notes = ['E2', 'B2', 'G#2', 'A#2', 'E3', 'B3', 'G#3', 'A#3', 'E4', 'B4', 'G#4', 'A#4' ];
+  const notes = ['E2', 'B2', 'G#2', 'A#2', 'E3', 'B3', 'G#3', 'A#3', 'E4', 'B4', 'G#4', 'A#4'];
 
 
   function createRandomStarNoteElements() {
@@ -38,8 +38,8 @@ function playSynth() {
 
   const starBtnStyle = {
     position: "absolute",
-    top: Math.floor(window.innerWidth * Math.random()),
-    left: Math.floor(window.innerHeight * Math.random())
+    top: Math.floor(window.innerHeight * Math.random()),
+    left: Math.floor(window.innerWidth * Math.random())
   }
 
   return (
