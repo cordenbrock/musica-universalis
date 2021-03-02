@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import * as Tone from 'tone'
+import * as Tone from 'tone';
 
 function PlaySynth() {
-  const notes = ['E2', 'B2', 'G#2', 'A#2', 'E3', 'B3', 'G#3', 'A#3', 'E4', 'B4', 'G#4', 'A#4'];
+  const notes = ['B2', 'G#2', 'F#2', 'C#2', 'E3', 'B3', 'F#3', 'G#3', 'A#3', 'E4', 'C#4', 'F#2', 'G#4'];
   const [stars, setStars] = useState(createRandomStarNoteElements())
   console.log(stars);
   function createRandomStarNoteElements() {
@@ -20,15 +20,31 @@ function PlaySynth() {
     return starBtnNotes;
   };
   
-  
+  function createSynth() {
+    const synth = new Tone.AMSynth(Tone.Synth, 32);
+    const reverb = new Tone.Reverb(15, 15)
+    const delay = new Tone.FeedbackDelay(.25, .75)
+    // const tremolo = new Tone.Tremolo(9, 0.75)
+    const filter = new Tone.Filter(2000, "lowpass", -48)
+    synth.set({
+      oscillator: {
+      type:  'sine'
+      },
+      envelope: {
+        attack: .05,
+        release: 2
+      },
+      volume: -12
+    })
+    return synth.chain(filter, reverb, delay, Tone.Destination);  
+  }
 
   function playNote(note) {
-    const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+    const synth = createSynth();
     const now = Tone.now()
     const randomNote = note
     console.log(randomNote);
-    synth.triggerAttack(randomNote, now);
-    synth.triggerRelease([randomNote], now + 4);
+    synth.triggerAttackRelease(randomNote, '1n');
   }
 
 
@@ -36,7 +52,9 @@ function PlaySynth() {
   const starBtnStyle = {
     position: "absolute",
     borderRadius: 13,
-    boxShadow: '0px 0px 15px #9E9E9E'
+    boxShadow: '0px 0px 16px #9E9E9E',
+    cursor: 'pointer',
+    zIndex: 3
   }
 
   return (
@@ -47,6 +65,7 @@ function PlaySynth() {
             style={{...starBtnStyle, bottom: star.yCoordinate, right: star.xCoordinate}}
             onClick={() => playNote(star.randomMusicNote)} key={i++}>o</button>
         )}
+        
       
     </>
   );
