@@ -1,5 +1,6 @@
 import React from 'react';
 import PlaySynth from './sandbox/PlaySynth';
+import Info from './sandbox/Info'
 import moon from './sandbox/moooooon.png';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <div className="stars"></div>
         <div className="twinkling"></div>
       </div>
+      <Info />
     </>
   );
 }

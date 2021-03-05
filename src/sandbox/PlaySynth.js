@@ -25,7 +25,7 @@ function PlaySynth() {
     const reverb = new Tone.Reverb(15, 15)
     const delay = new Tone.FeedbackDelay(.25, .75)
     // const tremolo = new Tone.Tremolo(9, 0.75)
-    const filter = new Tone.Filter(2000, "lowpass", -48)
+    const filter = new Tone.Filter(2000, "lowpass", -24)
     synth.set({
       oscillator: {
       type:  'sine'
@@ -41,7 +41,6 @@ function PlaySynth() {
 
   function playNote(note) {
     const synth = createSynth();
-    const now = Tone.now()
     const randomNote = note
     console.log(randomNote);
     synth.triggerAttackRelease(randomNote, '1n');
@@ -60,10 +59,10 @@ function PlaySynth() {
   return (
     <>
       
-        {stars.map((star,i=0) => 
+        {stars.map((star,index) => 
           <button 
             style={{...starBtnStyle, bottom: star.yCoordinate, right: star.xCoordinate}}
-            onClick={() => playNote(star.randomMusicNote)} key={i++}>o</button>
+            onClick={() => playNote(star.randomMusicNote)} key={index}>&nbsp;</button>
         )}
         
       
