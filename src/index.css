@@ -6,21 +6,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png);
-  background-size: cover;
+  position: fixed;
+  top: 0;
+	left:0;
+  bottom: 0;
+	right: 0;
 }
 
-.cosmic {
-
-  background: linear-gradient(0deg, rgb(54, 21, 0) 0%, rgb(0, 9, 32) 15%, rgba(14,0,25,1) 40%, rgba(4,0,11,1) 75%);
-  height: 100vh;
-  opacity: 50%;
+.cosmos {
+  height: 90vh;
 }
 
-.twinkling {
-    width:10000px;
+.stars {
+  background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+  position: absolute;
+  opacity: 100%;
+  top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+  z-index: -2;
+}
+
+.twinkle {
+    width: 10000px;
     height: 100%;
-    background: url("https:s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+    background: transparent url("https:s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
     background-size: 1000px 1000px;
     position: absolute;
     right: 0;
@@ -28,11 +40,23 @@ body {
     bottom: 0;
     z-index: -1;
       
-    -moz-animation:move-background 40s linear infinite;
-    -ms-animation:move-background 40s linear infinite;
-    -o-animation:move-background 40s linear infinite;
-    -webkit-animation:move-background 40s linear infinite;
-    animation:move-background 40s linear infinite 
+    -moz-animation:move-background 50s linear infinite;
+    -ms-animation:move-background 50s linear infinite;
+    -o-animation:move-background 50s linear infinite;
+    -webkit-animation:move-background 50s linear infinite;
+    animation:move-background 50s linear infinite 
+  }
+
+  .twinkle::after {
+    content: "";
+    background: linear-gradient(0deg, rgb(54, 21, 0) 0%, rgb(0, 9, 32) 15%, rgba(14,0,25,1) 40%, rgba(4,0,11,1) 75%);
+    opacity: 40%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
   }
 
   

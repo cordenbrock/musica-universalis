@@ -53,7 +53,7 @@ function Synth() {
     height: 'auto',
     top: 100,
     left: 100,
-    zIndex: 1,
+    zIndex: 3,
     cursor: 'pointer'
   }
 
@@ -61,6 +61,7 @@ function Synth() {
     position: "absolute",
     borderRadius: 13,
     boxShadow: '0px 0px 16px #9E9E9E',
+    zIndex: 2,
     cursor: 'pointer'
   }
 

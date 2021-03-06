@@ -66,7 +66,7 @@ export default function Info() {
   return (
     <div>
       <React.Fragment>
-        <Button style={{color:'white', position: 'absolute', bottom: '10px', right: '50%'}} onClick={toggleDrawer('bottom', true)}>Toggle bottom bar</Button>
+        <Button style={{color:'white', position: 'absolute', bottom: '10px', right: '50%'}} onClick={toggleDrawer('bottom', true)}>|| Musica Universalis ||</Button>
         <Drawer anchor={'bottom'} open={state['bottom']} onClose={toggleDrawer('bottom', false)}>
           {list('bottom')}
         </Drawer>
