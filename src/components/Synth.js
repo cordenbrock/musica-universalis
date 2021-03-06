@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import * as Tone from 'tone';
+import Moon from './../assets/img/moon.png';
 
-function PlaySynth() {
+function Synth() {
   const notes = ['B2', 'G#2', 'F#2', 'C#2', 'E3', 'B3', 'F#3', 'G#3', 'A#3', 'E4', 'C#4', 'F#2', 'G#4'];
   const [stars, setStars] = useState(createRandomStarNoteElements())
   console.log(stars);
@@ -46,28 +47,34 @@ function PlaySynth() {
     synth.triggerAttackRelease(randomNote, '1n');
   }
 
+  const moonStyle = {
+    position: "absolute",
+    width: 400,
+    height: 'auto',
+    top: 100,
+    left: 100,
+    zIndex: 1,
+    cursor: 'pointer'
+  }
 
-
-  const starBtnStyle = {
+  const starStyle = {
     position: "absolute",
     borderRadius: 13,
     boxShadow: '0px 0px 16px #9E9E9E',
-    cursor: 'pointer',
-    zIndex: 3
+    cursor: 'pointer'
   }
 
   return (
     <>
-      
-        {stars.map((star,index) => 
-          <button 
-            style={{...starBtnStyle, bottom: star.yCoordinate, right: star.xCoordinate}}
-            onClick={() => playNote(star.randomMusicNote)} key={index}>&nbsp;</button>
-        )}
-        
-      
+      <img style={moonStyle} src={Moon} alt="full moooon" />
+      {stars.map((star,index) => 
+        <button 
+          style={{...starStyle, bottom: star.yCoordinate, right: star.xCoordinate}}
+          onClick={() => playNote(star.randomMusicNote)} key={index}>&nbsp;
+        </button>
+      )}      
     </>
   );
 }
 
-export default PlaySynth;
+export default Synth;

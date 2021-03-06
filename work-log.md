@@ -15,3 +15,5 @@
 3/5 (8:00am) -- Looking into styled components and material-UI styling options
 
 3/5 (10:00am-1:00pm) -- Add and customize a drawer component from material-UI
+
+3/5 (3:00pm) -- Deliberate organization of file tree and draw out component tree
