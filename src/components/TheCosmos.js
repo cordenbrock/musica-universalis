@@ -3,10 +3,11 @@ import Synth from './Synth';
 
 function TheCosmos() {
 
-
   return (
     <>
       <div className='cosmic'>
+      </div>
+      <div className='twinkling'>
       </div>
       <Synth />
     </>
