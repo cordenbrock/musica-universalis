@@ -11,13 +11,27 @@ function Star(props) {
   cursor: pointer;
   bottom: ${props.position.bottom}px;
   right: ${props.position.right}px;
+  animation: fade-in 10s 1;
+  opacity: 75%;
 
   :hover {
     box-shadow: 0px 0px 32px #9E9E9E;
+    opacity: 100%;
   }
 
   :focus {
     outline: none;
+    box-shadow: 0px 0px 32px #9E9E9E;
+    opacity: 100%;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0%
+    }
+    100% {
+      opacity: 75%
+    }
   }
   `;
 

@@ -25,3 +25,5 @@
 3/8 (12:00pm) -- Merged to master
 
 3/8 (12:30) -- Add pseudo-selector for star component styling
+
+3/8 (2:00pm) -- Add fade-in animation
