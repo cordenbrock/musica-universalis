@@ -17,3 +17,11 @@
 3/5 (10:00am-1:00pm) -- Add and customize a drawer component from material-UI
 
 3/5 (3:00pm) -- Deliberate organization of file tree and draw out component tree
+
+3/8 (9:30am) -- Moved each star-note jsx into it owns stateless functional component
+
+3/8 (11:00am) -- Troubleshooting styling issue using styled-components for star components
+
+3/8 (12:00pm) -- Merged to master
+
+3/8 (12:30) -- Add pseudo-selector for star component styling

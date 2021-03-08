@@ -11,14 +11,21 @@ function Star(props) {
   cursor: pointer;
   bottom: ${props.position.bottom}px;
   right: ${props.position.right}px;
+
+  :hover {
+    box-shadow: 0px 0px 32px #9E9E9E;
+  }
+
+  :focus {
+    outline: none;
+  }
   `;
 
   return (
     <>
-      <Button 
-        // style={starStyle}
+      <Button
         onClick={() => props.onStarPlay(props.note)} >&nbsp;
-      </Button>     
+      </Button>
     </>
   );
 }
