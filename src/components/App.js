@@ -1,13 +1,13 @@
 import React from 'react';
 import TheCosmos from './TheCosmos';
-import Footer from './Footer';
+import Navigation from './Navigation';
 
 function App() {
 
   return (
     <>
       <TheCosmos />
-      <Footer />
+      <Navigation />
     </>
   );
 }

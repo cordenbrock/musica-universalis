@@ -2,7 +2,7 @@ import React from 'react';
 import Info from './Info';
 // import Interface from './Interface';
 
-function Footer() {
+function Navigation() {
 
   return (
     <>
@@ -12,4 +12,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Navigation;

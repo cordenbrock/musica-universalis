@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import * as Tone from 'tone';
 import Moon from './../assets/img/moon.png';
+import Star from './Star';
+import notes from './../constants/Notes';
 
-function Synth() {
-  const notes = ['B2', 'G#2', 'F#2', 'C#2', 'E3', 'B3', 'F#3', 'G#3', 'A#3', 'E4', 'C#4', 'F#2', 'G#4'];
-  const [stars, setStars] = useState(createRandomStarNoteElements())
+function MusicOfTheSpheres() {
+  
+  const [stars, setStars] = useState(createRandomStarNotes())
+  const [synth, setSynth] = useState(createSynth())
+  
   console.log(stars);
-  function createRandomStarNoteElements() {
-    const numberOfStars = 100;
-    let starBtnNotes = [];
+  console.log(synth);
+
+  function createRandomStarNotes(starNotes=50) {
+    const numberOfStars = starNotes;
+    let starNotesArray = [];
 
     for (let i=0; i<=numberOfStars; i++) {
       const randomizedStarNoteObject = {
@@ -16,16 +22,17 @@ function Synth() {
         xCoordinate: Math.floor(window.innerWidth * Math.random()),
         yCoordinate: Math.floor(window.innerHeight * Math.random())
       }
-      starBtnNotes.push(randomizedStarNoteObject);
+      starNotesArray.push(randomizedStarNoteObject);
+      
     };
-    return starBtnNotes;
+    return starNotesArray;
   };
-  
+
   function createSynth() {
     const synth = new Tone.AMSynth(Tone.Synth, 32);
     const reverb = new Tone.Reverb(15, 15)
     const delay = new Tone.FeedbackDelay(.25, .75)
-    // const tremolo = new Tone.Tremolo(9, 0.75)
+    const tremolo = new Tone.Tremolo(9, 0.75)
     const filter = new Tone.Filter(2000, "lowpass", -24)
     synth.set({
       oscillator: {
@@ -37,11 +44,11 @@ function Synth() {
       },
       volume: -12
     })
-    return synth.chain(filter, reverb, delay, Tone.Destination);  
+    return synth.chain(filter, reverb, tremolo, delay, Tone.Destination);  
   }
 
-  function playNote(note) {
-    const synth = createSynth();
+  const handleStarPlay = (note) => {
+    
     const randomNote = note
     console.log(randomNote);
     synth.triggerAttackRelease(randomNote, '1n');
@@ -57,25 +64,19 @@ function Synth() {
     cursor: 'pointer'
   }
 
-  const starStyle = {
-    position: "absolute",
-    borderRadius: 13,
-    boxShadow: '0px 0px 16px #9E9E9E',
-    zIndex: 2,
-    cursor: 'pointer'
-  }
-
   return (
     <>
-      <img style={moonStyle} src={Moon} alt="full moooon" />
+      <img style={moonStyle} src={Moon} alt="full moon" />
       {stars.map((star,index) => 
-        <button 
-          style={{...starStyle, bottom: star.yCoordinate, right: star.xCoordinate}}
-          onClick={() => playNote(star.randomMusicNote)} key={index}>&nbsp;
-        </button>
-      )}      
+        <Star
+          note={star.randomMusicNote}
+          position={{bottom: star.yCoordinate, right: star.xCoordinate}}
+          onStarPlay={handleStarPlay} 
+          key={index} >
+        </Star>
+      )}
     </>
   );
 }
 
-export default Synth;
+export default MusicOfTheSpheres;

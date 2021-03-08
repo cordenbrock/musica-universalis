@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 // import MailIcon from '@material-ui/icons/Mail';
@@ -66,7 +66,7 @@ export default function Info() {
   return (
     <div>
       <React.Fragment>
-        <Button style={{color:'white', position: 'absolute', bottom: '10px', right: '50%'}} onClick={toggleDrawer('bottom', true)}>|| Musica Universalis ||</Button>
+        <Button style={{color:'white', position: 'absolute', bottom: '10px', right: '50%'}} onClick={toggleDrawer('bottom', true)}>|| &nbsp; Musica Universalis &nbsp; ||</Button>
         <Drawer anchor={'bottom'} open={state['bottom']} onClose={toggleDrawer('bottom', false)}>
           {list('bottom')}
         </Drawer>

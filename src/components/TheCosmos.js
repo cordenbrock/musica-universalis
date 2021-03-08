@@ -1,6 +1,6 @@
 import React from 'react';
-import Synth from './Synth';
-import Footer from './Footer';
+import MusicOfTheSpheres from './MusicOfTheSpheres';
+// import Navigation from './Navigation';
 
 function TheCosmos() {
 
@@ -9,9 +9,9 @@ function TheCosmos() {
       <div className='cosmos'>
         <div className='stars'></div>
         <div className='twinkle'></div>
-        <Synth />
       </div>
-      <Footer />
+      <MusicOfTheSpheres />
+      {/* <Navigation /> */}
     </>
   );
 }
