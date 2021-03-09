@@ -3,22 +3,24 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
+import { Grid, Paper } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
   fullList: {
     width: 'auto',
   },
-});
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
 
 export default function Info() {
   const classes = useStyles();
@@ -36,42 +38,52 @@ export default function Info() {
 
   const list = (anchor) => (
     <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      className={clsx(classes.root, {
+        [classes.fullList]: anchor === 'bottom',
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Grid container spacing={5}>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            <h1>About</h1>
+            <h3>lorem description</h3>
+            <h3>github source code</h3>
+            <h3>portfolio link</h3>
+          </Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Paper className={classes.paper}>
+            <h1>interface controls</h1>
+            <h3>Set star quantity</h3>
+            <h3>Set scale/mode</h3>
+            <h3>Set tones</h3>
+          </Paper>
+        </Grid>
+      </Grid>
     </div>
   );
 
+
+  const styledButton = {
+    color:'white',
+    position: 'fixed',
+    width: '100%',
+    bottom: '10px',
+    margin:'auto',
+  }
+
   return (
-    <div>
-      <React.Fragment>
-        <Button style={{color:'white', position: 'absolute', bottom: '10px', right: '50%'}} onClick={toggleDrawer('bottom', true)}>|| &nbsp; Musica Universalis &nbsp; ||</Button>
+      <>
+        <div>
+          <Button style={styledButton} onClick={toggleDrawer('bottom', true)}>|| &nbsp; Musica Universalis &nbsp; ||</Button>
+        </div>
+        
         <Drawer anchor={'bottom'} open={state['bottom']} onClose={toggleDrawer('bottom', false)}>
           {list('bottom')}
         </Drawer>
-      </React.Fragment>
-      )
-    </div>
+      </>
   );
 }

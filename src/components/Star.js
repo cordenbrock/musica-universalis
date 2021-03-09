@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function Star(props) {
 
-  const Button = styled.button`
+  const StarButton = styled.button`
   position: absolute;
   border-radius: 13px;
   box-shadow: 0px 0px 16px #9E9E9E;
@@ -37,9 +37,9 @@ function Star(props) {
 
   return (
     <>
-      <Button
+      <StarButton
         onClick={() => props.onStarPlay(props.note)} >&nbsp;
-      </Button>
+      </StarButton>
     </>
   );
 }
