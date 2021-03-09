@@ -1,3 +1,2 @@
-const notes = ['B2', 'G#2', 'F#2', 'C#2', 'E3', 'B3', 'F#3', 'G#3', 'A#3', 'E4', 'C#4', 'F#2', 'G#4'];
-
-export default notes;
+export const theePrimordialChord = ['B2','C2','E2','F#2','G#2','B3','C3','E3','F#3','G#3','A#3','B4','C4','E4','F#4','G#4'];
+export const mysteryTrain = ['G#2','D#3','G#3','C3','D#3','E3','E3','E3','G#4','D#4','G#4','C4','D#4','E4','E4','E4','G#5','D#5','G#5','C5','D#5','E5',];

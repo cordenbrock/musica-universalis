@@ -3,7 +3,8 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
-import { Grid, Paper } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -45,7 +46,7 @@ export default function Info() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Grid container spacing={5}>
+      <Grid container spacing={2}>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
             <h1>About</h1>
@@ -56,7 +57,7 @@ export default function Info() {
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
-            <h1>interface controls</h1>
+            <h1>Interface Controls</h1>
             <h3>Set star quantity</h3>
             <h3>Set scale/mode</h3>
             <h3>Set tones</h3>
