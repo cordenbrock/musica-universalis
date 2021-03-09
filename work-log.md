@@ -29,3 +29,5 @@
 3/8 (2:00pm) -- Add fade-in animation
 
 3/9 (8:30am) -- Make new component, figure out canvas drawing for constellation feature
+
+3/9 (11:00) -- Page keeps re-rendering undesirably since new state slice, looking for solution...

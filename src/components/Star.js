@@ -1,43 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import StarButton from './StarButton';
 
 function Star(props) {
 
-  const StarButton = styled.button`
-  position: absolute;
-  border-radius: 13px;
-  box-shadow: 0px 0px 16px #9E9E9E;
-  z-index: 2;
-  cursor: pointer;
-  bottom: ${props.position.bottom}px;
-  right: ${props.position.right}px;
-  animation: fade-in 10s 1;
-  opacity: 75%;
+  // const [constellation, setConstellation] = useState([])
 
-  :hover {
-    box-shadow: 0px 0px 32px #9E9E9E;
-    opacity: 100%;
-  }
-
-  :focus {
-    outline: none;
-    box-shadow: 0px 0px 32px #9E9E9E;
-    opacity: 100%;
-  }
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0%
-    }
-    100% {
-      opacity: 75%
-    }
-  }
-  `;
 
   return (
     <>
       <StarButton
+        style={{
+          'bottom': props.position.bottom,
+          'right': props.position.right
+        }}
         onClick={() => props.onStarPlay(props.note, props.position)} >&nbsp;
       </StarButton>
     </>

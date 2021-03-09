@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import * as Tone from 'tone';
 import Moon from './../assets/img/moon.png';
 import Magic from './../assets/audio/youarethemagic.wav'
@@ -7,9 +7,20 @@ import { theePrimordialChord, mysteryTrain } from './../constants/Notes';
 
 function MusicOfTheSpheres() {
   
-  const [stars, setStars] = useState(createRandomStarNotes(100, mysteryTrain));
-  const [synth, setSynth] = useState(createSynth());
-  // const [constellation, setConstellation] = useState(createConstellation())
+  const [stars, setStars] = useState([]);
+  const [synth, setSynth] = useState();
+  const [constellation, setConstellation] = useState([])
+
+  useEffect(() => {
+    const starNotesArray = createRandomStarNotes(50);
+    const synth = createSynth();
+    setStars(starNotesArray);
+    setSynth(synth);
+  }, [])
+
+  useEffect(() => {
+
+  }, [])
 
   function createRandomStarNotes(starNotes=50, notes=theePrimordialChord) {
     const numberOfStars = starNotes;
@@ -22,7 +33,6 @@ function MusicOfTheSpheres() {
         yCoordinate: Math.floor(window.innerHeight * Math.random())
       }
       starNotesArray.push(randomizedStarNoteObject);
-      
     };
     return starNotesArray;
   };
@@ -46,10 +56,14 @@ function MusicOfTheSpheres() {
   }
 
   const handleStarPlay = (note, xy) => {
-    const randomNote = note;
-    const position = xy;
-    console.log(randomNote, position);
-    synth.triggerAttackRelease(randomNote, '1n');
+    const starPlayed = {
+      notePlayed: note,
+      position: xy
+    }
+    setConstellation([...constellation, starPlayed]);
+    console.log(constellation);
+
+    synth.triggerAttackRelease(starPlayed.notePlayed, '1n');
   }
 
   const handleMoonPlay = () => {
@@ -58,7 +72,6 @@ function MusicOfTheSpheres() {
       player.start();
     });
   }
-
 
   // const handleCreateConstellation = () => {
   //   document.activeElement.id
