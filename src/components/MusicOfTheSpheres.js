@@ -7,11 +7,9 @@ import { theePrimordialChord, mysteryTrain } from './../constants/Notes';
 
 function MusicOfTheSpheres() {
   
-  const [stars, setStars] = useState(createRandomStarNotes())
-  const [synth, setSynth] = useState(createSynth())
-  
-  console.log(stars);
-  console.log(synth);
+  const [stars, setStars] = useState(createRandomStarNotes(100, mysteryTrain));
+  const [synth, setSynth] = useState(createSynth());
+  // const [constellation, setConstellation] = useState(createConstellation())
 
   function createRandomStarNotes(starNotes=50, notes=theePrimordialChord) {
     const numberOfStars = starNotes;
@@ -47,10 +45,10 @@ function MusicOfTheSpheres() {
     return synth.chain(filter, reverb, delay, Tone.Destination);  
   }
 
-  const handleStarPlay = (note) => {
-    
-    const randomNote = note
-    console.log(randomNote);
+  const handleStarPlay = (note, xy) => {
+    const randomNote = note;
+    const position = xy;
+    console.log(randomNote, position);
     synth.triggerAttackRelease(randomNote, '1n');
   }
 
@@ -60,6 +58,11 @@ function MusicOfTheSpheres() {
       player.start();
     });
   }
+
+
+  // const handleCreateConstellation = () => {
+  //   document.activeElement.id
+  // }
 
   const moonStyle = {
     position: "absolute",
@@ -83,6 +86,9 @@ function MusicOfTheSpheres() {
           key={index} >
         </Star>
       )}
+      {/* <Constellation>
+        onCreateConstellation={handleCreateConstellation}
+      </Constellation> */}
     </>
   );
 }

@@ -38,7 +38,7 @@ function Star(props) {
   return (
     <>
       <StarButton
-        onClick={() => props.onStarPlay(props.note)} >&nbsp;
+        onClick={() => props.onStarPlay(props.note, props.position)} >&nbsp;
       </StarButton>
     </>
   );

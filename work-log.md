@@ -14,7 +14,7 @@
 
 3/5 (8:00am) -- Looking into styled components and material-UI styling options
 
-3/5 (10:00am-1:00pm) -- Add and customize a drawer component from material-UI
+3/5 (11:00am) -- Add and customize a drawer component from material-UI
 
 3/5 (3:00pm) -- Deliberate organization of file tree and draw out component tree
 
@@ -24,6 +24,8 @@
 
 3/8 (12:00pm) -- Merged to master
 
-3/8 (12:30) -- Add pseudo-selector for star component styling
+3/8 (12:30pm) -- Add pseudo-selector for star component styling
 
 3/8 (2:00pm) -- Add fade-in animation
+
+3/9 (8:30am) -- Make new component, figure out canvas drawing for constellation feature
