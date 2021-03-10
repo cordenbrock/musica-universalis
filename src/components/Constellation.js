@@ -8,9 +8,9 @@ function Constellation(props) {
 
   const draw = (ctx) => {
     ctx.strokeStyle = 'white'
-    ctx.shadowBlur = 2;
+    ctx.shadowBlur = 10;
     ctx.shadowColor = "white";
-    ctx.lineWidth = .25;
+    ctx.lineWidth = .314;
     
     if (constellation.length > 1) {
       ctx.beginPath();
