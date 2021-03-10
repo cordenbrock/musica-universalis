@@ -13,7 +13,7 @@ function MusicOfTheSpheres() {
   const [constellation, setConstellation] = useState([])
 
   useEffect(() => {
-    const starNotesArray = createRandomStarNotes(50, mysteryTrain);
+    const starNotesArray = createRandomStarNotes(42, mysteryTrain);
     const synth = createSynth();
     setStars(starNotesArray);
     setSynth(synth);

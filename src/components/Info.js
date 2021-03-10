@@ -7,19 +7,16 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
   root: {
     flexGrow: 1,
+    background: 'lavender',
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    background: 'black',
+    opacity: '1',
+    color: 'lavender',
   },
 }));
 
@@ -30,9 +27,9 @@ export default function Info() {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    // if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-    //   return;
-    // }
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
 
     setState({ ...state, [anchor]: open });
   };
@@ -40,14 +37,14 @@ export default function Info() {
   const list = (anchor) => (
     <div
       className={clsx(classes.root, {
-        [classes.fullList]: anchor === 'bottom',
+        [classes.root]: anchor === 'bottom',
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
     >
       <Grid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid item xs={3}>
           <Paper className={classes.paper}>
             <h1>About</h1>
             <h3>lorem description</h3>
@@ -61,6 +58,14 @@ export default function Info() {
             <h3>Set star quantity</h3>
             <h3>Set scale/mode</h3>
             <h3>Set tones</h3>
+          </Paper>
+        </Grid>
+        <Grid item xs={3}>
+          <Paper className={classes.paper}>
+            <h1>Gallery</h1>
+            <h3>photoem linksum</h3>
+            <h3>photoem linksum</h3>
+            <h3>photoem linksum</h3>
           </Paper>
         </Grid>
       </Grid>

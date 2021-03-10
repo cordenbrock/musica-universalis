@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MusicOfTheSpheres from './MusicOfTheSpheres';
-// import Navigation from './Navigation';
+import Navigation from './Navigation';
 
 function TheCosmos() {
+  const [ lineQuantity, setLineQuantity ] = useState(12);
+  const [ starQuantity, setStarQuantity ] = useState(42);
 
   return (
     <>
@@ -11,7 +13,9 @@ function TheCosmos() {
         <div className='twinkle'></div>
       </div>
       <MusicOfTheSpheres />
-      {/* <Navigation /> */}
+      <Navigation
+        config={lineQuantity, starQuantity}>
+      </Navigation>
     </>
   );
 }

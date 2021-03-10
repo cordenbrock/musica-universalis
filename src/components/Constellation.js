@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 function Constellation(props) {
   const { constellation } = props;
@@ -15,7 +15,7 @@ function Constellation(props) {
     ctx.beginPath();
     let i = 0;
     if (constellation.length > lineQuantity){
-      i = constellation.length-lineQuantity;
+      i = constellation.length - lineQuantity;
     }
     for (i; i < constellation.length-1; i++) {
       ctx.moveTo(constellation[i].xCoordinate, constellation[i].yCoordinate);
