@@ -6,11 +6,12 @@ import Star from './Star';
 import Constellation from './Constellation';
 import { theePrimordialChord, mysteryTrain } from './../constants/Notes';
 
-function MusicOfTheSpheres() {
+function MusicOfTheSpheres(props) {
   
   const [stars, setStars] = useState([]);
   const [synth, setSynth] = useState();
   const [constellation, setConstellation] = useState([])
+  console.log(props);
 
   useEffect(() => {
     const starNotesArray = createRandomStarNotes(42, mysteryTrain);

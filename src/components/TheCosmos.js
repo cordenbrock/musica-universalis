@@ -3,8 +3,16 @@ import MusicOfTheSpheres from './MusicOfTheSpheres';
 import Navigation from './Navigation';
 
 function TheCosmos() {
-  const [ lineQuantity, setLineQuantity ] = useState(12);
   const [ starQuantity, setStarQuantity ] = useState(42);
+  const [ lineQuantity, setLineQuantity ] = useState(12);
+
+  const handleSetStarQuantity = (e, stars) => {
+    setStarQuantity(stars);
+  }
+
+  const handleSetLineQuantity = (lines) => {
+    setLineQuantity(lines);
+  }
 
   return (
     <>
@@ -12,9 +20,12 @@ function TheCosmos() {
         <div className='stars'></div>
         <div className='twinkle'></div>
       </div>
-      <MusicOfTheSpheres />
+      <MusicOfTheSpheres
+        config={{starQuantity, lineQuantity}} >
+      </MusicOfTheSpheres>
       <Navigation
-        config={lineQuantity, starQuantity}>
+        onSetStarQuantity={handleSetStarQuantity} 
+        onSetLineQuanity={handleSetLineQuantity} >
       </Navigation>
     </>
   );
