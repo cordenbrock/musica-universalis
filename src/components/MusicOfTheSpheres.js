@@ -13,7 +13,7 @@ function MusicOfTheSpheres() {
   const [constellation, setConstellation] = useState([])
 
   useEffect(() => {
-    const starNotesArray = createRandomStarNotes(50);
+    const starNotesArray = createRandomStarNotes();
     const synth = createSynth();
     setStars(starNotesArray);
     setSynth(synth);
@@ -23,7 +23,7 @@ function MusicOfTheSpheres() {
     const numberOfStars = starNotes;
     let starNotesArray = [];
 
-    for (let i=0; i<=numberOfStars; i++) {
+    for (let i=0; i<numberOfStars; i++) {
       const randomizedStarNoteObject = {
         randomMusicNote: notes[Math.floor(Math.random() * notes.length)],
         xCoordinate: Math.floor(window.innerWidth * Math.random()),
@@ -52,10 +52,11 @@ function MusicOfTheSpheres() {
     return synth.chain(filter, reverb, delay, Tone.Destination);  
   }
 
-  const handleStarPlay = (note, xy) => {
+  const handleStarPlay = (note, x, y) => {
     const starPlayed = {
       notePlayed: note,
-      position: xy
+      xCoordinate: x,
+      yCoordinate: y
     }
     setConstellation([...constellation, starPlayed]);
 
@@ -69,21 +70,33 @@ function MusicOfTheSpheres() {
     });
   }
 
+  window.addEventListener('mousemove', function (e) {
+    document.getElementById('x-value').textContent = e.x;
+    document.getElementById('y-value').textContent = e.y;
+    // console.log(`x: ${e.x}, y: ${e.y}`)
+    // console.log(e);
+});
 
   return (
     <>
+      <p>
+          X: <span id="x-value"></span>
+      </p>
+      <p>
+          Y: <span id="y-value"></span>
+      </p>
       <img style={moonStyle} src={Moon} alt="full moon" onClick={() => handleMoonPlay()} />
       {stars.map((star,index) => 
         <Star
           note={star.randomMusicNote}
-          position={{bottom: star.yCoordinate, right: star.xCoordinate}}
+          xCoordinate={star.xCoordinate}
+          yCoordinate={star.yCoordinate}
           onStarPlay={handleStarPlay} 
           key={index} >
         </Star>
       )}
       <Constellation
         constellation={constellation} >
-        {/* onCreateConstellation={handleCreateConstellation} */}
       </Constellation>
     </>
   );

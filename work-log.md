@@ -32,6 +32,8 @@
 
 3/9 (11:00) -- Page keeps re-rendering undesirably since new state slice, looking for solution...
 
-3/9 (12:00pm) -- Hooked on hooks
+3/9 (12:00pm) -- Hooked on react hooks
 
 3/9 (3:00pm) -- Trying to draw constellation lines
+
+3/9 (5:00pm) -- Deliberating whether to momentarily put aside the canvas constellation feature...

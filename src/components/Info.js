@@ -30,9 +30,9 @@ export default function Info() {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
+    // if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    //   return;
+    // }
 
     setState({ ...state, [anchor]: open });
   };
@@ -44,7 +44,7 @@ export default function Info() {
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      // onKeyDown={toggleDrawer(anchor, false)}
     >
       <Grid container spacing={2}>
         <Grid item xs={6}>

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { context } from 'tone';
 
 function Constellation(props) {
   const { constellation } = props;
@@ -7,16 +6,17 @@ function Constellation(props) {
   const canvasRef = useRef(null);
 
 
-    const draw = ctx => {
-      ctx.strokeStyle = 'white'
-      ctx.shadowBlur = 2;
-      ctx.shadowColor = "white";
-      ctx.lineWidth = .15;
-      ctx.beginPath()
-      if (constellation.length > 2) {
-        ctx.moveTo(0,0);
-        ctx.lineTo(constellation[constellation.length-1].position.right, constellation[constellation.length-1].position.bottom);
-        ctx.stroke();
+  const draw = (ctx) => {
+    ctx.strokeStyle = 'white'
+    ctx.shadowBlur = 2;
+    ctx.shadowColor = "white";
+    ctx.lineWidth = .25;
+    
+    if (constellation.length > 1) {
+      ctx.beginPath();
+      ctx.moveTo(constellation[constellation.length-2].xCoordinate, constellation[constellation.length-2].xCoordinate);
+      ctx.lineTo(constellation[constellation.length-1].xCoordinate, constellation[constellation.length-1].yCoordinate);
+      ctx.stroke();
       }
     }
 
@@ -28,19 +28,17 @@ function Constellation(props) {
   }, [draw]);
 
   return (
-      <canvas ref={canvasRef} style={canvasStyle}/>
+      <canvas ref={canvasRef} style={canvasStyle} width={window.innerWidth} height={window.innerHeight}/>
   );
 }
 
 const canvasStyle = {
   position: "fixed",
-  width: window.innerWidth,
-  height: window.innerHeight,
   top: 0,
-  bottom: 0,
   right: 0,
+  bottom: 0,
   left: 0,
-  zIndex: 1,
+  zIndex: 0,
 }
 
 export default Constellation;
