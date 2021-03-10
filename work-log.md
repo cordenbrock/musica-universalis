@@ -37,3 +37,11 @@
 3/9 (3:00pm) -- Trying to draw constellation lines
 
 3/9 (5:00pm) -- Deliberating whether to momentarily put aside the canvas constellation feature...
+
+3/9-10 (Late) -- Finally got some interesting constellation lines
+
+3/10 (9:00am) -- Customized/styled lines and canvas element, fixed some typos, feature is minimally functional
+
+3/10 (10:00am) -- Considering either redux or refactoring component tree to allow for user configurables
+
+3/10 (1:00pm) -- Experimented with putting in sliders for user input configs
