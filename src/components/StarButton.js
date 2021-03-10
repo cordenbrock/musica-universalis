@@ -6,11 +6,11 @@ const StarButton = styled.button`
   box-shadow: 0px 0px 16px #9E9E9E;
   z-index: 2;
   cursor: pointer;
-  animation: fade-in 10s 1;
+  animation: fade-in 5s 1;
   opacity: 66%;
 
   :hover {
-    box-shadow: 0px 0px 48px #9E9E9E;
+    box-shadow: 0px 0px 24px #9E9E9E;
     opacity: 100%;
   }
 

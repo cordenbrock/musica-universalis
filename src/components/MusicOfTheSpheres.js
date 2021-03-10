@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Tone from 'tone';
 import Moon from './../assets/img/moon.png';
 import Magic from './../assets/audio/youarethemagic.wav'
 import Star from './Star';
+import Constellation from './Constellation';
 import { theePrimordialChord, mysteryTrain } from './../constants/Notes';
 
 function MusicOfTheSpheres() {
@@ -16,10 +17,6 @@ function MusicOfTheSpheres() {
     const synth = createSynth();
     setStars(starNotesArray);
     setSynth(synth);
-  }, [])
-
-  useEffect(() => {
-
   }, [])
 
   function createRandomStarNotes(starNotes=50, notes=theePrimordialChord) {
@@ -61,7 +58,6 @@ function MusicOfTheSpheres() {
       position: xy
     }
     setConstellation([...constellation, starPlayed]);
-    console.log(constellation);
 
     synth.triggerAttackRelease(starPlayed.notePlayed, '1n');
   }
@@ -71,20 +67,6 @@ function MusicOfTheSpheres() {
     Tone.loaded().then(() => {
       player.start();
     });
-  }
-
-  // const handleCreateConstellation = () => {
-  //   document.activeElement.id
-  // }
-
-  const moonStyle = {
-    position: "absolute",
-    width: 400,
-    height: 'auto',
-    top: 100,
-    left: 100,
-    zIndex: 3,
-    cursor: 'pointer'
   }
 
 
@@ -99,11 +81,23 @@ function MusicOfTheSpheres() {
           key={index} >
         </Star>
       )}
-      {/* <Constellation>
-        onCreateConstellation={handleCreateConstellation}
-      </Constellation> */}
+      <Constellation
+        constellation={constellation} >
+        {/* onCreateConstellation={handleCreateConstellation} */}
+      </Constellation>
     </>
   );
 }
+
+  const moonStyle = {
+    position: "absolute",
+    width: 400,
+    height: 'auto',
+    top: 100,
+    left: 100,
+    zIndex: 3,
+    cursor: 'pointer'
+  }
+
 
 export default MusicOfTheSpheres;

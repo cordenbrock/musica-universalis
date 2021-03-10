@@ -31,3 +31,7 @@
 3/9 (8:30am) -- Make new component, figure out canvas drawing for constellation feature
 
 3/9 (11:00) -- Page keeps re-rendering undesirably since new state slice, looking for solution...
+
+3/9 (12:00pm) -- Hooked on hooks
+
+3/9 (3:00pm) -- Trying to draw constellation lines

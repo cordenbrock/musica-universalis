@@ -3,11 +3,7 @@ import StarButton from './StarButton';
 
 function Star(props) {
 
-  // const [constellation, setConstellation] = useState([])
-
-
   return (
-    <>
       <StarButton
         style={{
           'bottom': props.position.bottom,
@@ -15,7 +11,6 @@ function Star(props) {
         }}
         onClick={() => props.onStarPlay(props.note, props.position)} >&nbsp;
       </StarButton>
-    </>
   );
 }
 
