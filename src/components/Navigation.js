@@ -7,13 +7,12 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
-// import About from './About';
 
 function Navigation(props) {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      background: '#110012',
+      background: '#110012'
     },
     paper: {
       padding: theme.spacing(2),
@@ -82,25 +81,24 @@ function Navigation(props) {
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 step={1}
-                min={5}
+                min={0}
                 max={365}
                 onChangeCommitted={(e,val) => props.onSetLineQuantity(e, val)}
               />
               <Typography id="discrete-slider" gutterBottom>
-                Set theme
+                Set theme (notes + tone)
               </Typography>
               <Slider
-                defaultValue={42}
+                defaultValue={1}
                 getAriaValueText={valuetext}
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 step={1}
                 marks
-                min={5}
-                max={365}
+                min={1}
+                max={3}
+                onChangeCommitted={(e,val) => props.onSetTheme(e, val)}
               />
-              <h3>Set scale/mode</h3>
-              <h3>Set tones</h3>
             </Paper>
           </Grid>
           <Grid item xs={3}>

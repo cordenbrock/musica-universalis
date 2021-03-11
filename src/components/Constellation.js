@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 
 function Constellation(props) {
   const { constellation } = props;
-  const userLineQuantity = 12;
   const canvasRef = useRef(null);
 
   const draw = (ctx, lineQuantity) => {
@@ -25,7 +24,6 @@ function Constellation(props) {
     }
 
   useEffect(() => {
-    console.log(constellation);
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
 

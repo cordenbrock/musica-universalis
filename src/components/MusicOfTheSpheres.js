@@ -4,20 +4,20 @@ import Magic from './../assets/audio/youarethemagic.wav'
 import Moon from './../assets/img/moon.png';
 import Star from './Star';
 import Constellation from './Constellation';
-import { theePrimordialChord, mysteryTrain } from './../constants/Notes';
+import noteThemes from './../constants/Notes';
 
 function MusicOfTheSpheres(props) {
-  
+  console.log(props.config)
   const [stars, setStars] = useState([]);
   const [synth, setSynth] = useState();
   const [constellation, setConstellation] = useState([])
 
   useEffect(() => {
-    const starNotesArray = createRandomStarNotes(props.config.starQuantity, mysteryTrain);
+    const starNotesArray = createRandomStarNotes(props.config.starQuantity, noteThemes[props.config.theme]);
     const synth = createSynth();
     setStars(starNotesArray);
     setSynth(synth);
-  }, [props.config.starQuantity])
+  }, [props.config])
 
   function createRandomStarNotes(starNotes, notes) {
     const numberOfStars = starNotes;
