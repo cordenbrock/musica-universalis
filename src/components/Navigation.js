@@ -12,7 +12,8 @@ function Navigation(props) {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      background: '#110012'
+      background: '#0b0412'
+      // background: "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png')"
     },
     paper: {
       padding: theme.spacing(2),
@@ -20,6 +21,7 @@ function Navigation(props) {
       background: '#251b36',
       opacity: '1',
       color: '#513f57',
+      height: '100%'
     },
   }));
 
@@ -54,16 +56,20 @@ function Navigation(props) {
             <Paper className={classes.paper}>
               <h1>About</h1>
               <hr/>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Greetings and welcome to the constellation drawing music app, a place in the digital void with stellar synth sounds for infinite astro-jams.</p>
+              <p>In the spirit of the great mathematically-minded audiophiles from Pythagoras to Keppler, <em>Musica Universalis</em>--a reference to the metaphysical concept also known as the "music of the spheres"--was developed with the goal to further explore the relations between sound and shapes, harmony and space.</p>
+              <p>In the very least, the intention here is to invoke and highlight the fundamental human instinct for play and curiosity, and to observe the often strange, emergent visual or aural patterns that arise.</p>
             </Paper>
           </Grid>
           <Grid item xs={6}>
             <Paper className={classes.paper}>
               <h1>Ground Control</h1>
               <hr/>
+              <br/>
               <Typography id="discrete-slider" gutterBottom>
                 Set star quantity
               </Typography>
+              <br/>
               <Slider
                 defaultValue={42}
                 getAriaValueText={valuetext}
@@ -74,9 +80,11 @@ function Navigation(props) {
                 max={365}
                 onChangeCommitted={(e,val) => props.onSetStarQuantity(e, val)}
               />
+              <br/>
               <Typography id="discrete-slider" gutterBottom>
                 Set line quantity
               </Typography>
+              <br/>
               <Slider
                 defaultValue={12}
                 getAriaValueText={valuetext}
@@ -87,9 +95,11 @@ function Navigation(props) {
                 max={365}
                 onChangeCommitted={(e,val) => props.onSetLineQuantity(e, val)}
               />
+              <br/>
               <Typography id="discrete-slider" gutterBottom>
-                Set theme (notes + tone)
+                Set theme
               </Typography>
+              <br/>
               <Slider
                 defaultValue={1}
                 getAriaValueText={valuetext}
@@ -106,11 +116,15 @@ function Navigation(props) {
           <Grid item xs={3}>
             <Paper className={classes.paper}>
               <h1>Links</h1>
+              <small>(under construction)</small>
               <hr/>
-              <span><small>(under construction)</small></span>
-              <h3>github <a href='https://github.com/cordenbrock/musica-universalis'>source code</a></h3>
-              <h3>gallery</h3>
-              <h3>portfolio</h3>
+              <p><a href='https://github.com/cordenbrock/musica-universalis'>source code</a></p>
+              <p>gallery</p>
+              <p>portfolio</p>
+              <h1>Acknowledgements</h1>
+              <hr/>
+              <p>Also, a cosmic-size shoutout to all my amazing peers in the October-2020 Epicodus cohort and the incredible support from the Epicodus staff who helped maintain my proverbial orbit through the code-o-sphere.</p>
+              <p>Lastly, credit for the wisdom of the moon goes to Shawn's illustrious standup sign-off, stay magical y'all</p>
             </Paper>
           </Grid>
         </Grid>
@@ -135,8 +149,7 @@ function Navigation(props) {
           <Drawer 
             anchor={'bottom'}
             open={state['bottom']}
-            onClose={toggleDrawer('bottom', false)}
-            variant={'persistent'} >
+            onClose={toggleDrawer('bottom', false)} >
             {drawer('bottom')}
           </Drawer>
         </>
