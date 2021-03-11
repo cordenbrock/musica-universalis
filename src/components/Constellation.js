@@ -1,34 +1,34 @@
 import React, { useEffect, useRef } from 'react';
 
 function Constellation(props) {
-  const { constellation } = props;
+  const { constellation, lineQuantity } = props;
   const canvasRef = useRef(null);
-
-  const draw = (ctx, lineQuantity) => {
-    ctx.strokeStyle = 'white'
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = 'white';
-    ctx.lineWidth = .618;
-
-    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-    ctx.beginPath();
-    let i = 0;
-    if (constellation.length > lineQuantity){
-      i = constellation.length - lineQuantity;
-    }
-    for (i; i < constellation.length-1; i++) {
-      ctx.moveTo(constellation[i].xCoordinate, constellation[i].yCoordinate);
-      ctx.lineTo(constellation[i+1].xCoordinate, constellation[i+1].yCoordinate);  
-    }
-    ctx.stroke();
-    }
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
 
-    draw(context, props.lineQuantity)
-  }, [draw, props.lineQuantity]);
+    const draw = (ctx, lineQuantity) => {
+      ctx.strokeStyle = 'white'
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = 'white';
+      ctx.lineWidth = .618;
+  
+      ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+      ctx.beginPath();
+      let i = 0;
+      if (constellation.length > lineQuantity){
+        i = constellation.length - lineQuantity;
+      }
+      for (i; i < constellation.length-1; i++) {
+        ctx.moveTo(constellation[i].xCoordinate, constellation[i].yCoordinate);
+        ctx.lineTo(constellation[i+1].xCoordinate, constellation[i+1].yCoordinate);  
+      }
+      ctx.stroke();
+      }
+      
+    draw(context, lineQuantity)
+  });
 
   return (
       <canvas ref={canvasRef} style={canvasStyle} width={window.innerWidth} height={window.innerHeight}/>
