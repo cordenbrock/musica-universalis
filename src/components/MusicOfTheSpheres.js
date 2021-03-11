@@ -91,7 +91,7 @@ function MusicOfTheSpheres(props) {
 
   const moonStyle = {
     position: "absolute",
-    width: 400,
+    width: 300,
     height: 'auto',
     top: 100,
     left: 100,
