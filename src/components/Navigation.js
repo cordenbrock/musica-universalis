@@ -69,27 +69,25 @@ function Navigation(props) {
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 step={1}
-                marks
-                min={5}
-                max={42}
+                min={0}
+                max={365}
                 onChangeCommitted={(e,val) => props.onSetStarQuantity(e, val)}
               />
-              {console.log()}
               <Typography id="discrete-slider" gutterBottom>
-                Set star quantity
+                Set line quantity
               </Typography>
               <Slider
-                defaultValue={42}
+                defaultValue={12}
                 getAriaValueText={valuetext}
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 step={1}
-                marks
                 min={5}
-                max={42}
+                max={365}
+                onChangeCommitted={(e,val) => props.onSetLineQuantity(e, val)}
               />
               <Typography id="discrete-slider" gutterBottom>
-                Set line quantity
+                Set theme
               </Typography>
               <Slider
                 defaultValue={42}

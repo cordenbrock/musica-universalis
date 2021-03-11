@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as Tone from 'tone';
-import Moon from './../assets/img/moon.png';
 import Magic from './../assets/audio/youarethemagic.wav'
+import Moon from './../assets/img/moon.png';
 import Star from './Star';
 import Constellation from './Constellation';
 import { theePrimordialChord, mysteryTrain } from './../constants/Notes';
@@ -11,16 +11,15 @@ function MusicOfTheSpheres(props) {
   const [stars, setStars] = useState([]);
   const [synth, setSynth] = useState();
   const [constellation, setConstellation] = useState([])
-  console.log(props);
 
   useEffect(() => {
-    const starNotesArray = createRandomStarNotes(42, mysteryTrain);
+    const starNotesArray = createRandomStarNotes(props.config.starQuantity, mysteryTrain);
     const synth = createSynth();
     setStars(starNotesArray);
     setSynth(synth);
-  }, [])
+  }, [props.config.starQuantity])
 
-  function createRandomStarNotes(starNotes=50, notes=theePrimordialChord) {
+  function createRandomStarNotes(starNotes, notes) {
     const numberOfStars = starNotes;
     let starNotesArray = [];
 
@@ -71,21 +70,8 @@ function MusicOfTheSpheres(props) {
     });
   }
 
-  window.addEventListener('mousemove', function (e) {
-    document.getElementById('x-value').textContent = e.x;
-    document.getElementById('y-value').textContent = e.y;
-    // console.log(`x: ${e.x}, y: ${e.y}`)
-    // console.log(e);
-});
-
   return (
     <>
-      <p>
-          X: <span id="x-value"></span>
-      </p>
-      <p>
-          Y: <span id="y-value"></span>
-      </p>
       <img style={moonStyle} src={Moon} alt="full moon" onClick={() => handleMoonPlay()} />
       {stars.map((star,index) => 
         <Star
@@ -97,7 +83,8 @@ function MusicOfTheSpheres(props) {
         </Star>
       )}
       <Constellation
-        constellation={constellation} >
+        constellation={constellation}
+        lineQuantity={props.config.lineQuantity} >
       </Constellation>
     </>
   );

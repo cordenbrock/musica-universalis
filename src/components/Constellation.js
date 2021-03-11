@@ -29,7 +29,7 @@ function Constellation(props) {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
 
-    draw(context, userLineQuantity)
+    draw(context, props.lineQuantity)
   }, [draw]);
 
   return (

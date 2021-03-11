@@ -10,7 +10,7 @@ function TheCosmos() {
     setStarQuantity(stars);
   }
 
-  const handleSetLineQuantity = (lines) => {
+  const handleSetLineQuantity = (e, lines) => {
     setLineQuantity(lines);
   }
 
@@ -25,7 +25,7 @@ function TheCosmos() {
       </MusicOfTheSpheres>
       <Navigation
         onSetStarQuantity={handleSetStarQuantity} 
-        onSetLineQuanity={handleSetLineQuantity} >
+        onSetLineQuantity={handleSetLineQuantity} >
       </Navigation>
     </>
   );
