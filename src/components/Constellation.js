@@ -28,7 +28,7 @@ function Constellation(props) {
     const context = canvas.getContext('2d');
 
     draw(context, props.lineQuantity)
-  }, [draw]);
+  }, [draw, props.lineQuantity]);
 
   return (
       <canvas ref={canvasRef} style={canvasStyle} width={window.innerWidth} height={window.innerHeight}/>

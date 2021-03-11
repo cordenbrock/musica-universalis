@@ -105,12 +105,12 @@ function Navigation(props) {
           </Grid>
           <Grid item xs={3}>
             <Paper className={classes.paper}>
-              <h1>But wait, there's more!</h1>
+              <h1>Links</h1>
               <hr/>
-              <h3>Gallery</h3>
               <span><small>(under construction)</small></span>
-              <h3>github <a>source code</a></h3>
-              <h3><a>portfolio</a></h3>
+              <h3>github <a href='https://github.com/cordenbrock/musica-universalis'>source code</a></h3>
+              <h3>gallery</h3>
+              <h3>portfolio</h3>
             </Paper>
           </Grid>
         </Grid>
