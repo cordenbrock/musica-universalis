@@ -53,12 +53,14 @@ function Navigation(props) {
           <Grid item xs={3}>
             <Paper className={classes.paper}>
               <h1>About</h1>
+              <hr/>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </Paper>
           </Grid>
           <Grid item xs={6}>
             <Paper className={classes.paper}>
-              <h1>Interface Controls</h1>
+              <h1>Ground Control</h1>
+              <hr/>
               <Typography id="discrete-slider" gutterBottom>
                 Set star quantity
               </Typography>
@@ -96,17 +98,19 @@ function Navigation(props) {
                 step={1}
                 marks
                 min={1}
-                max={3}
+                max={5}
                 onChangeCommitted={(e,val) => props.onSetTheme(e, val)}
               />
             </Paper>
           </Grid>
           <Grid item xs={3}>
             <Paper className={classes.paper}>
-              <h1>Resources (under construction)</h1>
-              <h3>github source code</h3>
-              <h3>portfolio link</h3>
+              <h1>But wait, there's more!</h1>
+              <hr/>
               <h3>Gallery</h3>
+              <span><small>(under construction)</small></span>
+              <h3>github <a>source code</a></h3>
+              <h3><a>portfolio</a></h3>
             </Paper>
           </Grid>
         </Grid>

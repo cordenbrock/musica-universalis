@@ -7,7 +7,6 @@ import Constellation from './Constellation';
 import noteThemes from './../constants/Notes';
 
 function MusicOfTheSpheres(props) {
-  console.log(props.config)
   const [stars, setStars] = useState([]);
   const [synth, setSynth] = useState();
   const [constellation, setConstellation] = useState([])
