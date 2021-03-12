@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -26,7 +26,7 @@ function Navigation(props) {
   }));
 
     const classes = useStyles();
-    const [state, setState] = React.useState({
+    const [state, setState] = useState({
       bottom: false,
     });
 
@@ -37,8 +37,7 @@ function Navigation(props) {
     const toggleDrawer = (anchor, open) => (event) => {
       if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
         return;
-      }
-  
+      }  
       setState({ ...state, [anchor]: open });
     };
   
@@ -58,7 +57,7 @@ function Navigation(props) {
               <hr/>
               <p>Greetings and welcome to the constellation drawing music app, a place in the digital void with stellar synth sounds for infinite astro-jams.</p>
               <p>In the spirit of the great mathematically-minded audiophiles from Pythagoras to Keppler, <em>Musica Universalis</em>--a reference to the metaphysical concept also known as the "music of the spheres"--was developed with the goal to further explore the relations between sound and shapes, harmony and space.</p>
-              <p>In the very least, the intention here is to invoke and highlight the fundamental human instinct for play and curiosity, and to observe the often strange, emergent visual or aural patterns that arise.</p>
+              <p>In the very least, the intention here is to invoke and highlight the fundamental human instinct for play and curiosity, and to tap into the often strange, emergent visual or aural patterns that arise.</p>
             </Paper>
           </Grid>
           <Grid item xs={6}>
@@ -149,7 +148,8 @@ function Navigation(props) {
           <Drawer 
             anchor={'bottom'}
             open={state['bottom']}
-            onClose={toggleDrawer('bottom', false)} >
+            onClose={toggleDrawer('bottom', false)}
+            variant={'persistent'} >
             {drawer('bottom')}
           </Drawer>
         </>
