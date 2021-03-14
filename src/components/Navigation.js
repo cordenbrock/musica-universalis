@@ -2,18 +2,17 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
+import NavigationButton from "./NavigationButton";
 
 function Navigation(props) {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       background: '#0b0412'
-      // background: "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png')"
     },
     paper: {
       padding: theme.spacing(2),
@@ -130,19 +129,10 @@ function Navigation(props) {
       </div>
     );
   
-  
-    const styledButton = {
-      color:'white',
-      position: 'fixed',
-      width: '100%',
-      bottom: '10px',
-      margin:'auto',
-    }
-  
     return (
         <>
           <div>
-            <Button style={styledButton} onClick={toggleDrawer('bottom', true)}>|| &nbsp; Musica Universalis &nbsp; ||</Button>
+            <NavigationButton onClick={toggleDrawer('bottom', true)}>|| &nbsp; Musica Universalis &nbsp; ||</NavigationButton>
           </div>
           
           <Drawer 

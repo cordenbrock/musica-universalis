@@ -12,6 +12,8 @@ const StarButton = styled.button`
   :hover {
     box-shadow: 0px 0px 24px #9E9E9E;
     opacity: 100%;
+    font-size:20px
+    border-radius: 20px;
   }
 
   :focus {
