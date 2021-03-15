@@ -114,14 +114,13 @@ function Navigation(props) {
           <Grid item xs={3}>
             <Paper className={classes.paper}>
               <h1>Links</h1>
-              <small>(under construction)</small>
               <hr/>
-              <p><a href='https://github.com/cordenbrock/musica-universalis'>source code</a></p>
-              <p>gallery</p>
-              <p>portfolio</p>
+              <p>GitHub: <a href='https://github.com/cordenbrock/musica-universalis'>source code</a></p>
+              <p>gallery<small> (under construction)</small></p>
+              <p>portfolio<small> (under construction)</small></p>
               <h1>Acknowledgements</h1>
               <hr/>
-              <p>Also, a cosmic-size shoutout to all my amazing peers in the October-2020 Epicodus cohort and the incredible support from the Epicodus staff who helped maintain my proverbial orbit through the code-o-sphere.</p>
+              <p>A cosmic-size shoutout to all my amazing peers in the October-2020 Epicodus cohort and the incredible support from the Epicodus staff who helped maintain my proverbial orbit through the code-o-sphere.</p>
               <p>Lastly, credit for the wisdom of the moon goes to Shawn's illustrious standup sign-off, stay magical y'all</p>
             </Paper>
           </Grid>
