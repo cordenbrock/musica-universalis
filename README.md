@@ -13,7 +13,7 @@
 
 ## _Why_ does it do?
 
-* This web app served as my capstone project as part of the the October 2020 cohort at [Epicodus](https://www.epicodus.com/). That, and you might say it also momentarily fulfills my childhood aspirations of becoming an astronaut.
+* This web app served as my capstone project as part of the October 2020 cohort at [Epicodus](https://www.epicodus.com/). That, and you might say it also momentarily fulfills my childhood aspirations of becoming an astronaut.
 
 ## Examples
 
