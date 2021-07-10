@@ -9,7 +9,7 @@
 
 ## _What_ does it do?
 
-* Musica Universalis is an interactive web app that allows a user to draw "musical constellations" on the backdrop of a twinkling night sky. Upon each page load, interactive stars will randomly be scattered across the page and randomly be assigned a note value that resonates as the user draws from star to star. At the bottom of the page is "Navigation" component with a "Ground Control" feature that allows the user to configure star quantity, line quantity, and note-theme presets. Also, the moon talks...
+* Musica Universalis is an interactive web app that allows a user to draw "musical constellations" on the backdrop of a twinkling night sky. Upon loading the page, clickable stars will randomly be scattered across the page with a randomly-assigned note value that resonates as the user draws from star to star by clicking on different stars. At the bottom of the page is a toggle-able "Navigation" component with a "Ground Control" feature that allows the user to configure star quantity, line quantity, and note-theme presets. Also, features a talking moon...
 
 ## _Why_ does it do?
 
