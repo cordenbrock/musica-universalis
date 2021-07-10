@@ -9,7 +9,7 @@ const ga4react = new GA4React(process.env.REACT_APP_GOOGLE_ANALYTICS);
 const isProduction = process.env.NODE_ENV === 'production';
 
 (async _ => {
-  isProduction && (await ga4react.initialize());
+  await ga4react.initialize();
 
   ReactDOM.render(
     <React.StrictMode>
