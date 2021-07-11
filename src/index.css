@@ -20,7 +20,6 @@ body {
 .stars {
   background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
   position: absolute;
-  opacity: 100%;
   top: 0;
 	bottom: 0;
 	left: 0;
@@ -50,8 +49,8 @@ body {
   .twinkle::after {
     content: "";
     background: linear-gradient(0deg, rgb(54, 21, 0) 0%, rgb(0, 9, 32) 10%, rgba(14,0,25,1) 40%, rgba(4,0,11,1) 90%);
-    opacity: 40%;
-    top: 0;
+    opacity: .5;
+    top: 0;     
     left: 0;
     bottom: 0;
     right: 0;
