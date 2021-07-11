@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import GA4React from "ga-4-react";
 
 const ga4react = new GA4React(process.env.REACT_APP_GOOGLE_ANALYTICS);
-const isProduction = process.env.NODE_ENV === 'production';
+// const isProduction = process.env.NODE_ENV === 'production';
 
 (async _ => {
   await ga4react.initialize();
