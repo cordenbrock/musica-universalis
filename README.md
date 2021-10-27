@@ -3,9 +3,10 @@
 #### By Cory Nordenbrock
 ##### 3/14/20
 
-## Deployment
+## Live Site
 
-* [Live site](http://www.musica-universalis.com/) hosted on Heroku.
+* Visit site: [Musica Universalis](http://www.musica-universalis.com/).
+* CI/CD deployment and hosting powered by Vercel.
 
 ## _What_ does it do?
 
@@ -36,13 +37,11 @@
 
 ## Built with/Tools used
 
-* _React/Create-React-App_
-* _CSS, Styled-Components, Material-UI_
-* _HTML_
+* _React/CRA_
+* _CSS Animations, Styled-Components, Material-UI_
 * _Tone.js_
 * _Canvas_
-* _Heroku_
-* _VSCode_
+* _Vercel_
 
 ### Known Bugs/Future Improvements
 
@@ -53,4 +52,4 @@
 
 ### Legal
 
-MIT License, (c) 2020 Cory Nordenbrock
+MIT License, (c) 2021 Cory Nordenbrock
